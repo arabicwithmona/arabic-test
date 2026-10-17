@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Тест по египетскому арабскому: ваш уровень от A0 до B2</title>
+<meta name="description" content="37 вопросов по египетскому диалекту. Узнайте свой уровень от A0 до B2 и получите план обучения. Бесплатно, на русском, с произношением.">
+<meta property="og:title" content="Какой у тебя уровень египетского арабского?">
+<meta property="og:description" content="Бесплатный тест по египетскому диалекту на русском, с произношением. Узнай уровень и с чего продолжать.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=Nunito:wght@600;700;800;900&display=swap">
+<style>
+:root{
+  --cream:#FFF7EF;--paper:#FFFDF9;--blush:#FBDDE0;--rose:#E58F99;--rose2:#C8667A;--teal:#2F8F93;--mint:#D3EEE8;--gold:#D9A441;
+  --ink:#3B2A33;--muted:#8F7681;--line:#F0D9D2;--ok:#79C9A0;--bad:#E58F99;
+  --f-ui:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-ar:"Cairo","Geeza Pro","Segoe UI",Tahoma,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--cream)}
+body{margin:0;min-height:100vh;font-family:var(--f-ui);color:var(--ink);font-size:16px;line-height:1.45;background:var(--cream);
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));overflow-x:hidden}
+body:before{content:"";display:block;height:14px;margin:0 calc(-1 * max(16px,env(safe-area-inset-right,0px))) 0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));opacity:.55;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M0 11 L7 3 L14 11 L21 3 L28 11' fill='none' stroke='%232F8F93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") repeat-x 0 0}
+.blob{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+.b1{width:260px;height:260px;background:#FBDDE0;top:-100px;right:-90px;opacity:.7}
+.b2{width:220px;height:220px;background:#D3EEE8;bottom:-90px;left:-90px;opacity:.7}
+.wrap{position:relative;z-index:1;max-width:520px;margin:0 auto;padding-top:14px;display:flex;flex-direction:column;gap:18px}
+.brandbar{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:800;color:var(--rose2)}
+.brandbar span{display:flex;align-items:center;gap:7px}
+.brandbar a{color:var(--muted);text-decoration:none;font-weight:700}
+.pill{display:inline-block;background:var(--blush);color:var(--rose2);font-weight:900;font-size:12px;letter-spacing:.14em;padding:7px 14px;border-radius:99px}
+h1{font-size:clamp(30px,8vw,38px);line-height:1.1;margin:14px 0 0;font-weight:900;letter-spacing:-.01em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--rose2)}
+.lead{color:var(--muted);margin:10px 0 0;font-weight:600;max-width:48ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.facts span{background:var(--paper);border:1.5px solid var(--line);border-radius:99px;padding:6px 12px;font-size:14px;font-weight:700}
+.hero{margin:20px auto 0;width:250px;height:226px;border-radius:125px 125px 22px 22px;background:linear-gradient(180deg,#FBDDE0,#FFF0E6);border:2.5px solid #F2BFC4;position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.hero .sun{position:absolute;top:34px;left:50%;margin-left:-38px;width:76px;height:76px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#FFE3A0,#F2B955)}
+.hero .water{position:absolute;left:0;right:0;bottom:0;height:60px;background:linear-gradient(180deg,#BFE6E0,#8CCFC8)}
+.hero svg{position:relative;z-index:2;margin-bottom:24px}
+.st{position:absolute;color:var(--gold);font-size:16px}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:900;font-size:17px;border-radius:20px;padding:17px 20px;width:100%;display:block;text-align:center;text-decoration:none;color:#fff;
+  background:linear-gradient(180deg,#EE9EA7,#DB7587);box-shadow:0 7px 0 #BF566A,0 12px 20px rgba(200,102,122,.28);transition:transform .08s,box-shadow .08s}
+.btn:active{transform:translateY(4px);box-shadow:0 3px 0 #BF566A,0 6px 12px rgba(200,102,122,.28)}
+.btn.ghost{background:var(--paper);color:var(--rose2);box-shadow:0 0 0 2px var(--rose) inset}
+.btn.ghost:active{transform:scale(.99);box-shadow:0 0 0 2px var(--rose) inset}
+.btn:focus-visible,.opt:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.card{background:rgba(255,253,249,.8);border:2px solid var(--line);border-radius:26px;padding:20px 16px;box-shadow:0 8px 22px rgba(200,140,130,.1)}
+.prog{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{flex:1;height:10px;border-radius:99px;background:#F4E3DB;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#F2A9B1,#E58F99);border-radius:99px;transition:width .3s ease}
+.block{display:flex;justify-content:space-between;gap:10px;white-space:nowrap;font-size:12px;letter-spacing:.14em;font-weight:900;color:var(--teal);text-transform:uppercase}
+.q{font-size:21px;font-weight:900;margin:6px 0 0;text-wrap:balance}
+.arch{margin:14px auto 0;width:100%;border-radius:100px 100px 20px 20px;background:var(--paper);border:2px solid var(--line);text-align:center;padding:20px 10px 16px;box-shadow:0 8px 20px rgba(200,140,130,.12)}
+.arch .ar{font-family:var(--f-ar);font-weight:800;font-size:clamp(46px,14vw,64px);line-height:1.35;color:var(--ink)}
+.arch .tr{display:inline-block;margin-top:2px;background:var(--mint);color:var(--teal);font-weight:900;font-size:17px;padding:5px 14px;border-radius:99px}
+.arch.long{border-radius:40px 40px 20px 20px}
+.arch.long .ar{font-size:clamp(24px,7vw,32px);line-height:1.7}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.opts.one{grid-template-columns:1fr}
+.opt{appearance:none;font:inherit;cursor:pointer;min-height:58px;border-radius:18px;border:2px solid var(--line);background:var(--paper);color:var(--ink);padding:10px 12px;font-size:17px;font-weight:800;text-align:center;box-shadow:0 4px 0 var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .08s}
+.opt:hover:not(:disabled){border-color:var(--rose)}
+.opt:active:not(:disabled){transform:translateY(2px)}
+.opt .ar{font-family:var(--f-ar);font-weight:800;font-size:24px;line-height:1.5}
+.opt small{font-size:13px;font-weight:800;color:var(--teal)}
+.opt.ok{background:#DDF3E8;border-color:var(--ok);box-shadow:0 4px 0 var(--ok)}
+.opt.bad{background:#FDE3E5;border-color:var(--bad);box-shadow:0 4px 0 var(--bad)}
+.opt:disabled{cursor:default}
+.opt.dk{color:var(--muted);grid-column:1 / -1;min-height:48px;font-size:15px}
+.fb{margin-top:14px;font-size:15px;font-weight:700;color:#7A5A12;background:#FFF4D9;border-radius:16px;padding:11px 14px}
+.fb:empty{display:none}
+.fb b.ok{color:#2E8B5E}.fb b.bad{color:var(--rose2)}
+.next{margin-top:14px}
+.badge{margin:6px auto 0;width:156px;height:156px;border-radius:50%;background:linear-gradient(180deg,#FBDDE0,#FFF0E6);border:3px solid #F2BFC4;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.badge small{font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--muted)}
+.badge b{font-size:clamp(52px,16vw,66px);line-height:1;font-weight:900;color:var(--rose2)}
+.badge svg{position:absolute;bottom:-14px}
+.res{text-align:center}
+.res h2{font-size:23px;margin:26px 0 4px;font-weight:900;text-wrap:balance}
+.res .score{color:var(--muted);font-weight:700;font-size:14px}
+.res p{margin:10px 0 0;text-align:left}
+.ladder{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.row{display:grid;grid-template-columns:32px 1fr 44px;gap:10px;align-items:center;font-size:14px;font-weight:800;font-variant-numeric:tabular-nums}
+.row .track{height:10px;border-radius:99px;background:#F4E3DB;overflow:hidden}
+.row .track i{display:block;height:100%;border-radius:99px;background:#F2A9B1}
+.row.pass .track i{background:var(--teal)}
+.row.skip{opacity:.4}
+.row span:last-child{text-align:right;color:var(--muted)}
+.res .row b{text-align:left}
+.plan{margin:10px 0 0;padding:12px 14px;list-style:none;display:flex;flex-direction:column;gap:8px;background:var(--paper);border:2px solid var(--line);border-radius:20px;text-align:left;font-weight:700}
+.plan li{display:flex;gap:9px;align-items:flex-start}
+.plan li:before{content:"🪷";flex:none}
+.mona{display:flex;flex-direction:column;gap:12px}
+.mona h3{margin:0;font-size:19px;font-weight:900}
+.mona p{margin:0;color:var(--muted);font-size:15px;font-weight:600}
+.copy{display:flex;gap:8px;align-items:center}
+.copy code{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:12px;font-family:inherit;font-weight:700}
+.copy .btn{flex:none;width:auto;padding:12px 16px;font-size:15px;box-shadow:0 0 0 2px var(--rose) inset}
+.foot{text-align:center;font-size:13px;color:var(--muted);font-weight:700}
+.fade{animation:fade .25s ease}
+@keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none}.bar i{transition:none}}
+@media (max-width:380px){.opts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="lot">
+<g fill="#F7C3C9" stroke="#E58F99" stroke-width="2.4" stroke-linejoin="round">
+<path d="M50 62 C20 58 4 40 6 22 C26 26 42 40 50 62Z"/>
+<path d="M50 62 C80 58 96 40 94 22 C74 26 58 40 50 62Z"/>
+<path d="M50 62 C30 54 20 32 30 10 C42 24 50 40 50 62Z"/>
+<path d="M50 62 C70 54 80 32 70 10 C58 24 50 40 50 62Z"/>
+</g>
+<path d="M50 64 C36 48 38 22 50 4 C62 22 64 48 50 64Z" fill="#FBD4D8" stroke="#D9778A" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M50 20 C46 34 47 46 50 56" fill="none" stroke="#F2A9B1" stroke-width="2" stroke-linecap="round"/>
+</g></defs></svg>
+<div class="blob b1"></div><div class="blob b2"></div>
+<main class="wrap">
+  <div class="brandbar"><span><svg width="22" height="16" viewBox="0 0 100 70"><use href="#lot"/></svg>Арабский с Моной</span><a href="https://t.me/arabic_with_mona" target="_blank" rel="noopener">t.me/arabic_with_mona</a></div>
+
+  <section id="intro" class="fade">
+    <span class="pill">ТЕСТ · A0 → B2</span>
+    <h1>Какой у тебя уровень <em>египетского</em> арабского?</h1>
+    <div class="hero" aria-hidden="true"><div class="sun"></div><span class="st" style="left:30px;top:48px">✦</span><span class="st" style="right:34px;top:78px;font-size:12px">✦</span><span class="st" style="left:56px;top:110px;font-size:11px">✦</span><div class="water"></div>
+      <svg width="150" height="105" viewBox="0 0 100 70"><use href="#lot"/></svg></div>
+    <p class="lead">Ответь на вопросы и узнай свой уровень. Слова даны с произношением так, как говорят в Египте. Если станет трудно, тест сам остановится и подскажет, что учить дальше.</p>
+    <div class="facts"><span>⏱ 5-10 минут</span><span>🎁 бесплатно</span><span>🔊 с произношением</span><span>🇷🇺 на русском</span></div>
+    <div style="margin-top:22px;display:flex;flex-direction:column;gap:12px">
+      <button class="btn" id="start" type="button">Начать тест</button>
+      <p class="foot" style="margin:0">Не знаешь ответ? Выбирай «Не знаю». Так результат точнее, угадывать не нужно.</p>
+    </div>
+  </section>
+
+  <section id="quiz" hidden>
+    <div class="prog"><span id="pnum"></span><div class="bar"><i id="pbar"></i></div></div>
+    <div class="card fade" id="qcard" style="margin-top:14px">
+      <div class="block"><span id="qblock"></span><span id="qlvl"></span></div>
+      <p class="q" id="qtext"></p>
+      <div class="arch" id="qarch" hidden><div class="ar" dir="rtl" lang="ar" id="qar"></div><div class="tr" id="qtr" hidden></div></div>
+      <div class="opts" id="qopts"></div>
+      <div class="fb" id="qfb" aria-live="polite"></div>
+      <button class="btn next" id="qnext" type="button" hidden>Дальше</button>
+    </div>
+  </section>
+
+  <section id="result" hidden style="display:flex;flex-direction:column;gap:18px"></section>
+</main>
+
+<script>
+const PREPLY = "https://preply.com/ru/tutor/5072909";
+const TG = "https://t.me/arabic_with_mona";
+const PASS = 0.6;   // доля верных ответов, чтобы засчитать уровень
+const STOP = 0.5;   // если в блоке меньше, тест останавливается
+
+const LEVELS = ["A0","A1","A2","B1","B2"];
+const BLOCKNAME = {A0:"Буквы и звуки",A1:"Первые слова",A2:"Простые фразы",B1:"Живая речь",B2:"Свободный разговор"};
+
+/* t = вопрос, ar = арабский текст в арке, tr = произношение под ним, o = варианты текстом,
+   oar = варианты по-арабски (можно "арабский|произношение"), a = номер верного (до перемешивания),
+   one = варианты в один столбец, long = длинная фраза, ex = пояснение */
+const Q = [
+ // ---------- A0 ----------
+ {l:"A0", t:"Как в Египте читается буква ج?", ar:"ج", o:["г","дж","ж","х"], a:0, ex:"В египетском ج читается как «г»: гамиль (красивый), гамаль (верблюд). В литературном арабском это «дж»."},
+ {l:"A0", t:"Какая это буква?", ar:"ع", o:["айн","гайн","каф","фа"], a:0, ex:"ع это айн, горловой звук. У похожей غ (гайн) есть точка сверху."},
+ {l:"A0", t:"Как читается слово?", ar:"مَدْرَسَة", o:["мадраса","мударис","мадрасу","мударраса"], a:0, ex:"Слово значит «школа». Окончание ـة читается как «а»."},
+ {l:"A0", t:"Как в Каире обычно читается буква ق?", ar:"ق", o:["короткая остановка голоса, как в «альб»","как «к»","как «дж»","как «х»"], a:0, ex:"Каирцы говорят «альб» (сердце) вместо литературного «кальб». Это одна из главных примет египетского."},
+ {l:"A0", t:"Какая из этих букв не соединяется со следующей?", oar:["ب","ر","ك","ن"], a:1, ex:"ر одна из шести букв-одиночек: ا د ذ ر ز و."},
+ {l:"A0", t:"Какая буква читается как «ш»?", oar:["ش","س","ص","ز"], a:0, ex:"ش это «шин», у неё три точки сверху."},
+ {l:"A0", t:"Сколько букв в арабском алфавите?", o:["24","26","28","30"], a:2},
+ // ---------- A1 ----------
+ {l:"A1", t:"Что значит эта фраза?", ar:"اسمك إيه؟", tr:"исмак э?", o:["Как тебя зовут?","Сколько тебе лет?","Где ты живёшь?","Чем занимаешься?"], a:0, long:true, ex:"إيه значит «что», اسمك «твоё имя». Дословно: «твоё имя что?»."},
+ {l:"A1", t:"Что значит приветствие?", ar:"إزيك؟", tr:"иззайяк?", o:["Как дела?","Спасибо","До свидания","Извини"], a:0, ex:"Мужчине говорят иззайяк, женщине иззайик."},
+ {l:"A1", t:"Что значит слово?", ar:"فين", tr:"фен", o:["кто","что","где","когда"], a:2, ex:"فين «где», مين «кто», إيه «что», إمتى «когда»."},
+ {l:"A1", t:"Что значит слово?", ar:"مية", tr:"майя", o:["вода","молоко","чай","хлеб"], a:0},
+ {l:"A1", t:"Что в Египте значит слово عيش?", ar:"عيش", tr:"айш", o:["хлеб","рис","мясо","сахар"], a:0, ex:"Египтяне называют хлеб «айш», а так же слово значит «жизнь». Лепёшка для них почти как жизнь."},
+ {l:"A1", t:"Как сказать «она»?", oar:["هو|хувва","هي|хийя","إحنا|эхна","هم|хумма"], a:1, ex:"هي (хийя) значит «она», а هو (хувва) «он»."},
+ {l:"A1", t:"Какое это число?", ar:"٧", o:["4","6","7","9"], a:2, ex:"В Египте на вывесках и ценниках часто пишут арабскими цифрами: ٧ это 7."},
+ // ---------- A2 ----------
+ {l:"A2", t:"Что значит эта фраза?", ar:"مش فاهم", tr:"миш фахим", o:["Я не понимаю","Я не хочу","Я не знаю","Я не слышу"], a:0, ex:"مش значит «не», فاهم «понимающий». Женщина скажет مش فاهمة (миш фахма)."},
+ {l:"A2", t:"Что значит эта фраза?", ar:"بكام ده؟", tr:"бикам да?", o:["Сколько это стоит?","Что это?","Где это?","Кто это?"], a:0, ex:"كام «сколько», ده «это». Самая нужная фраза на рынке."},
+ {l:"A2", t:"Что значит слово?", ar:"دلوقتي", tr:"дилвати", o:["сейчас","завтра","вчера","всегда"], a:0},
+ {l:"A2", t:"Как сказать «вчера»?", oar:["امبارح|имбарех","بكره|букра","النهارده|эннахарда","دلوقتي|дилвати"], a:0, ex:"بكره «завтра», النهارده «сегодня», امبارح «вчера»."},
+ {l:"A2", t:"Как сказать «Я поел»?", oar:["أكلت|акальт","باكل|бакуль","هاكل|хакуль","كُل|куль"], a:0, ex:"Приставка ب- даёт настоящее время (бакуль, я ем), هـ- будущее (хакуль, я поем). Прошедшее: акальт."},
+ {l:"A2", t:"Выбери правильную фразу: «Она красивая»", oar:["هي حلوة","هي حلو"], a:0, one:true, ex:"حلو (м.р.) и حلوة (ж.р.) согласуются, как в русском."},
+ {l:"A2", t:"Что значит слово?", ar:"ليه؟", tr:"лей?", o:["почему","когда","сколько","как"], a:0},
+ {l:"A2", t:"Женщина хочет чай. Как она скажет?", oar:["عايزة شاي|айза шай","عايز شاي|айз шай","عايزين شاي|айзин шай","مش عايز شاي|миш айз шай"], a:0, ex:"عايز (м.р.), عايزة (ж.р.), عايزين (мы, вы, они)."},
+ // ---------- B1 ----------
+ {l:"B1", t:"Какая приставка делает будущее время?", oar:["هـ / حـ|ха-","بـ|би-","عـ|аа-","مـ|ма-"], a:0, ex:"هاكتب (хактиб) значит «я напишу». Приставка بـ даёт настоящее время: باكتب (бактиб, я пишу)."},
+ {l:"B1", t:"Что значит слово?", ar:"بيشرب", tr:"бишраб", o:["он пьёт","он пил","он выпьет","пей!"], a:0, ex:"بيـ перед глаголом даёт настоящее время третьего лица: بيشرب «он пьёт»."},
+ {l:"B1", t:"Как сказать «Я не знаю» (м.р.)?", oar:["معرفش|маарафш","مش معرفش|миш маарафش","لا اعرف|ля аариф","ما اعرف|ма аариф"], a:0, ex:"Отрицание глагола: ما + глагол + ش. معرفش значит «я не знаю»."},
+ {l:"B1", t:"Что значит слово?", ar:"عشان", tr:"ашан", o:["потому что, чтобы","но","если","пока"], a:0, ex:"عشان значит «потому что» и «для того чтобы»."},
+ {l:"B1", t:"Что значит эта фраза?", ar:"لسه ما جيتش", tr:"лисса ма гитш", o:["Я ещё не пришёл","Я уже пришёл","Я приду завтра","Я не хочу приходить"], a:0, long:true, ex:"لسه значит «ещё», ما...ش отрицание. Заметь «г» в جيتش."},
+ {l:"B1", t:"Как сказать «Это моя сумка»?", oar:["دي شنطتي|ди шантити","ده شنطتي|да шантити","دي شنطة أنا|ди шанта ана","هي شنطتي|хийя шантити"], a:0, ex:"شنطة женского рода, поэтому دي. Для мужского рода используют ده: ده كتابي (это моя книга)."},
+ {l:"B1", t:"Что значит эта фраза?", ar:"لو معايا فلوس هسافر", tr:"ло маайя филус хасафир", o:["Если будут деньги, поеду","Я поехал, потому что были деньги","У меня нет денег, я не поеду","Я поеду, когда ты вернёшься"], a:0, long:true, ex:"لو «если», معايا «у меня с собой», هسافر «я поеду»."},
+ {l:"B1", t:"Что значит выражение?", ar:"مش لازم", tr:"миш лазим", o:["не обязательно","нельзя","срочно","никогда"], a:0, ex:"«Нельзя» по-египетски: ممنوع или مينفعش."},
+ // ---------- B2 ----------
+ {l:"B2", t:"Что значит выражение?", ar:"على فكرة", o:["кстати","наоборот","к сожалению","на самом деле нет"], a:0, ex:"Дословно «на мысль». Египтяне говорят так, когда вспомнили что-то по ходу разговора."},
+ {l:"B2", t:"Что значит ответ «خلاص»?", ar:"تمام، خلاص", o:["Хорошо, всё готово","Подожди ещё","Не знаю","Я не согласен"], a:0, ex:"خلاص значит «всё, готово, хватит». Смысл зависит от интонации."},
+ {l:"B2", t:"Что значит «يعني» в разговоре?", ar:"يعني", o:["то есть, ну, типа","очень","никогда","наверное"], a:0, ex:"يعني египтяне вставляют постоянно, как русское «ну» или «типа»."},
+ {l:"B2", t:"Что значит «ولا يهمك»?", ar:"ولا يهمك", o:["Не беспокойся, без проблем","Мне всё равно","Я не знаю","Уходи"], a:0, ex:"Так отвечают на «спасибо» или «извини», когда всё в порядке."},
+ {l:"B2", t:"Как сказать «две книги»?", oar:["كتابين","كتاب اتنين","اتنين كتابين","كتابات اتنين"], a:0, ex:"Для двух предметов достаточно окончания ـين: كتابين, ولدين (два мальчика)."},
+ {l:"B2", t:"Что значит эта фраза?", ar:"أنا كنت رايح الشغل بس العربية عطلت في الطريق", o:["Я шёл на работу, но по дороге сломалась машина","Я был на работе, а машина ждала меня","Я не пошёл на работу, потому что сломалась машина","Я ехал домой и встретил друга"], a:0, long:true, one:false, ex:"رايح «иду», الشغل «работа», بس «но», العربية «машина», عطلت «сломалась»."},
+ {l:"B2", t:"Что значит эта фраза?", ar:"لو كنت عارف إنك جاي كنت استنيتك", o:["Если бы я знал, что ты придёшь, я бы тебя подождал","Я знал, что ты придёшь, и подождал","Ты не придёшь, и я не буду ждать","Подожди меня, я скоро приду"], a:0, long:true, ex:"لو كنت عارف «если бы я знал», جاي «приходишь», كنت استنيتك «я бы тебя подождал»."}
+];
+
+const INFO = {
+ "A0":{name:"Начинаем с нуля",text:"Арабские буквы пока незнакомы, и это нормальный старт. За несколько недель можно выучить алфавит и первые слова, а египетский диалект поможет быстро заговорить.",plan:["Выучить буквы и особенности египетского: ج как «г», ق как короткая остановка","Первые слова и приветствия: إزيك، شكراً، مية","Слушать короткие фразы каждый день"],cta:"На первом уроке разберёмся, с чего начать именно вам."},
+ "A0+":{name:"Буквы есть, пора говорить",text:"Алфавит и чтение у вас уже есть. Следующий шаг: самые частые слова, местоимения и первые фразы, чтобы выйти на живой разговор.",plan:["Выучить 100 самых частых слов","Местоимения, род и вопросы: فين، مين، إيه","Разговорные фразы для знакомства и рынка"],cta:"На пробном уроке можно сразу попробовать первые диалоги."},
+ "A1":{name:"Уверенный старт",text:"Вы знаете базовые слова и понимаете простые фразы. Дальше: глаголы, времена и первые полноценные предложения.",plan:["Глаголы в настоящем, прошедшем и будущем: بـ، هـ","Отрицание: مش и ما...ش","Фразы для еды, цен и такси"],cta:"Мона поможет перейти от отдельных слов к живой речи."},
+ "A2":{name:"Базовая речь освоена",text:"Вы строите простые предложения и понимаете бытовые диалоги. Дальше: больше глаголов, связки и разговорные слова, чтобы речь звучала естественно.",plan:["Слова-связки: عشان، بس، لسه","Притяжательные формы и согласование рода","Диалоги из египетских сериалов и фильмов"],cta:"На уроках с Моной вы будете больше говорить и меньше зубрить."},
+ "B1":{name:"Средний уровень",text:"Вы понимаете повседневную речь и можете поддержать разговор. Дальше: условные предложения, идиомы и скорость понимания на слух.",plan:["Условные предложения: لو، لو كنت","Идиомы и разговорные выражения","Аудирование: вырезки из сериалов и подкасты"],cta:"Для вас подойдут уроки разговорной практики с разбором ошибок."},
+ "B2":{name:"Свободный разговор",text:"Отличный результат. Вы уверенно понимаете и говорите по-египетски. Для дальнейшего роста нужны живое общение, шутки, пословицы и тонкости речи.",plan:["Пословицы и юмор","Разговоры на сложные темы","Письменный египетский: чаты и соцсети"],cta:"Мона будет вашим партнёром по разговору и поможет довести речь до уровня носителя."}
+};
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const PAGE_URL = (location.protocol.startsWith("http") ? location.origin + location.pathname : TG);
+
+let idx = 0, answered = false, stats = {}, stopped = false;
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function startTest(){
+  idx = 0; stopped = false;
+  stats = {}; LEVELS.forEach(l => stats[l] = {total:0,right:0,seen:0});
+  Q.forEach(q => stats[q.l].total++);
+  $("result").hidden = true; $("intro").hidden = true; $("quiz").hidden = false;
+  render(); window.scrollTo({top:0});
+}
+
+function optHTML(q, txt){
+  if (!q.oar) return esc(txt);
+  const p = txt.split("|");
+  return '<span class="ar" dir="rtl" lang="ar">' + esc(p[0]) + '</span>' + (p[1] ? '<small>' + esc(p[1]) + '</small>' : '');
+}
+
+function render(){
+  const q = Q[idx];
+  answered = false;
+  const inLevel = Q.filter(x => x.l === q.l);
+  const n = inLevel.indexOf(q) + 1;
+  $("pnum").textContent = (idx+1) + " / " + Q.length;
+  $("pbar").style.width = (idx/Q.length*100) + "%";
+  $("qblock").textContent = BLOCKNAME[q.l];
+  $("qlvl").textContent = q.l + " · " + n + "/" + inLevel.length;
+  $("qtext").textContent = q.t;
+  $("qarch").hidden = !q.ar;
+  $("qarch").classList.toggle("long", !!q.long);
+  if (q.ar) $("qar").textContent = q.ar;
+  $("qtr").hidden = !q.tr; $("qtr").textContent = q.tr || "";
+  const list = (q.oar || q.o).map((txt,i) => ({txt,i}));
+  if (!q.one) shuffle(list);
+  const opts = $("qopts");
+  opts.className = "opts" + (q.one || q.long ? " one" : "");
+  opts.innerHTML = "";
+  list.forEach(item => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "opt"; b.dataset.i = item.i;
+    b.innerHTML = optHTML(q, item.txt);
+    b.addEventListener("click", () => pick(item.i, b));
+    opts.appendChild(b);
+  });
+  const dk = document.createElement("button");
+  dk.type = "button"; dk.className = "opt dk"; dk.textContent = "Не знаю";
+  dk.addEventListener("click", () => pick(-1, dk));
+  opts.appendChild(dk);
+  $("qfb").innerHTML = ""; $("qnext").hidden = true;
+  const card = $("qcard"); card.classList.remove("fade"); void card.offsetWidth; card.classList.add("fade");
+}
+
+function pick(k, btn){
+  if (answered) return; answered = true;
+  const q = Q[idx];
+  const btns = [...$("qopts").children];
+  btns.forEach(b => b.disabled = true);
+  const ok = k === q.a;
+  stats[q.l].seen++;
+  if (ok) stats[q.l].right++;
+  btns.forEach(b => { if (b.dataset.i !== undefined && +b.dataset.i === q.a) b.classList.add("ok"); });
+  if (!ok && k >= 0) btn.classList.add("bad");
+  const correct = q.oar ? "" : "Правильно: " + (q.o[q.a]) + ". ";
+  $("qfb").innerHTML = (ok ? '<b class="ok">Верно!</b> ' : '<b class="bad">' + (k < 0 ? "Ничего страшного." : "Не совсем.") + '</b> ' + esc(correct)) + (q.ex ? esc(q.ex) : "");
+  const last = idx === Q.length - 1 || Q[idx+1].l !== q.l;
+  if (last){
+    const s = stats[q.l];
+    if (s.right / s.total < STOP) stopped = true;
+  }
+  $("qnext").textContent = (idx === Q.length - 1 || stopped) ? "Узнать уровень" : "Дальше";
+  $("qnext").hidden = false;
+  $("qnext").focus({preventScroll:true});
+}
+
+function next(){
+  if (stopped || idx === Q.length - 1) return finish();
+  idx++; render(); $("qcard").scrollIntoView({block:"nearest",behavior:"smooth"});
+}
+
+function computeLevel(){
+  let last = -1;
+  for (let i = 0; i < LEVELS.length; i++){
+    const s = stats[LEVELS[i]];
+    if (s.seen === s.total && s.right / s.total >= PASS) last = i; else break;
+  }
+  if (last < 0) return "A0";
+  if (last === 0) return "A0+";
+  return LEVELS[last];
+}
+
+function finish(){
+  $("pbar").style.width = "100%";
+  $("quiz").hidden = true;
+  const lv = computeLevel(), I = INFO[lv];
+  let right = 0, seen = 0;
+  LEVELS.forEach(l => { right += stats[l].right; seen += stats[l].seen; });
+  const rows = LEVELS.map(l => {
+    const s = stats[l];
+    if (!s.seen) return '<div class="row skip"><b>' + l + '</b><div class="track"><i style="width:0"></i></div><span>—</span></div>';
+    const pct = Math.round(s.right / s.total * 100);
+    const pass = s.seen === s.total && s.right / s.total >= PASS;
+    return '<div class="row' + (pass ? " pass" : "") + '"><b>' + l + '</b><div class="track"><i style="width:' + pct + '%"></i></div><span>' + s.right + "/" + s.total + '</span></div>';
+  }).join("");
+  const share = "Мой уровень египетского арабского: " + lv + ". Пройди бесплатный тест: " + PAGE_URL;
+  const tgShare = "https://t.me/share/url?url=" + encodeURIComponent(PAGE_URL) + "&text=" + encodeURIComponent("Мой уровень египетского арабского: " + lv + ". Какой у тебя?");
+  $("result").innerHTML = `
+  <div class="card res fade">
+    <div class="badge"><small>ТВОЙ УРОВЕНЬ</small><b>${lv}</b><svg width="44" height="31" viewBox="0 0 100 70"><use href="#lot"/></svg></div>
+    <h2>${esc(I.name)}</h2>
+    <div class="score">${right} верных ответов из ${seen}</div>
+    <p>${esc(I.text)}</p>
+    <div class="ladder">${rows}</div>
+    <p style="font-weight:900;margin-top:18px">Что учить дальше</p>
+    <ul class="plan">${I.plan.map(p => "<li>" + esc(p) + "</li>").join("")}</ul>
+    <p style="color:var(--muted);font-size:13px;font-weight:700">Тест даёт ориентир. Точный уровень можно определить на пробном уроке.</p>
+  </div>
+  <div class="card mona fade">
+    <h3>Пробный урок с Моной</h3>
+    <p>Преподаватель арабского из Египта, объясняет на русском. Больше 3300 уроков на Preply. ${esc(I.cta)}</p>
+    <a class="btn" href="${PREPLY}" target="_blank" rel="noopener">Записаться на пробный урок</a>
+    <a class="btn ghost" href="${TG}" target="_blank" rel="noopener">Бесплатные уроки в Telegram</a>
+  </div>
+  <div class="card mona fade">
+    <h3>Пройди с другом</h3>
+    <p>Отправь тест другу, который тоже учит арабский, и сравните уровни.</p>
+    <a class="btn ghost" id="tgshare" href="${tgShare}" target="_blank" rel="noopener">Отправить в Telegram</a>
+    <div class="copy"><code id="shareurl"></code><button class="btn ghost" id="copybtn" type="button">Копировать</button></div>
+    <button class="btn ghost" id="again" type="button">Пройти ещё раз</button>
+  </div>`;
+  $("result").hidden = false;
+  $("shareurl").textContent = PAGE_URL;
+  $("copybtn").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(share); $("copybtn").textContent = "Скопировано"; }
+    catch(e){ const rg = document.createRange(); rg.selectNodeContents($("shareurl")); const s = getSelection(); s.removeAllRanges(); s.addRange(rg); $("copybtn").textContent = "Выделено"; }
+  });
+  $("again").addEventListener("click", startTest);
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+$("start").addEventListener("click", startTest);
+$("qnext").addEventListener("click", next);
+</script>
+</body>
+</html>
